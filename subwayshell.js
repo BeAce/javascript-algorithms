@@ -1,0 +1,1 @@
+mongoimport --db subway --collection subwaydataset --file E:\db\json\dataset.json --jsonArray;

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		function forloop() {
+			return this.i = 1;
+		}
+		function forLength(length) {
+			return this.i <= length;
+		}
+		function forPlus() {
+			return ++i;
+		}
+		for(forloop();forLength(10);forPlus()) {
+			document.write("<p>"+ i +"</p>");
+		}
+	</script>
+</body>
+</html>

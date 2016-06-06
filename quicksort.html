@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>快速排序算法</title>
+</head>
+<body>
+	<script>
+		function quickSort(arr) {
+			if(arr.length < 1) {
+				return arr;
+			}
+			var middleItem = Math.floor(arr.length/2); 
+			var middleData = arr[middleItem];
+
+			var leftData = [];
+			var rightData = [];
+
+			for(var i = 0; i < arr.length; i ++) {
+				if(arr[i] < middleData) {
+					leftData.push(arr[i]);
+				}else if(arr[i] > middleData) {
+					rightData.push(arr[i]);
+				}
+			}
+			return quickSort(leftData).concat(middleData,quickSort(rightData)); 
+		}
+		var dataset = [33,18,2,40,16,63,27];
+
+		console.log(quickSort(dataset));
+
+		/*function fast(arr){
+		    if(arr.length<1){
+		        return arr
+		    }   
+		    var center_id =  Math.floor(arr.length/2);
+		    var center = arr[center_id]
+
+		    var left_arr = [];
+		    var right_arr = [];
+		    for(var i =0;i<arr.length;i++)
+		    {       
+		        if(arr[i]<center)
+		        {
+		            left_arr.push(arr[i]);
+		        }
+		        else if(arr[i]>center){
+
+		            right_arr.push(arr[i]);
+		        }
+		    }
+		    return fast(left_arr).concat(center,fast(right_arr))
+		}
+		var aa = [33,18,2,40,16,63,27];
+
+		console.log(fast(aa))*/
+		</script>
+</body>
+</html>

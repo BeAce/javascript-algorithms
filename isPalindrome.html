@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>isPalindrome</title>
+</head>
+<body>
+	<input type="text" id="palindrome" placeholder="Palindrome string">
+	<input type="button" id="change" value="check">
+	<p></p>
+	<script>
+	window.onload = function() {
+		var value = document.getElementById('palindrome').value;
+		var change = document.getElementById('change');
+		var p = document.getElementsByTagName('p')[0];
+		change.addEventListener('click',function() {
+			//var value = document.getElementById('palindrome').value; //addEventListener 内部无法访问到外部的value
+			console.log(typeof(value));
+			isPalindrome(value);
+		},false);
+		function isPalindrome(str) {
+			var stack = [];
+			for(var i = 0; i < str.length; i++) {
+				stack.push(str[i]);
+			}
+			var rword = "";
+			while(stack.length > 0) {
+				rword += stack.pop();
+				console.log(rword);
+			}
+			if(str == rword) {
+				p.innerHTML = 'YES';
+			}else{
+				p.innerHTML = 'NO';
+			}
+		}
+	}
+		
+	</script>
+</body>
+</html>
